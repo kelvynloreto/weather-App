@@ -45,6 +45,7 @@ const latlon={
    <Cardswaeter lat={coords.lat} lon={coords.lon}/>
    <input type="text" onChange={target} />
    <button onClick={ChangedCity}>busca otra ciudad</button>
+   <box-icon name='water'></box-icon>
     </div>
   )
 }
