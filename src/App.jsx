@@ -25,7 +25,7 @@ function target(e){
  }
 
 function ChangedCity(){
-  const KEY= "406d7ff930c289dec70bc39330ba50e8"
+  const KEY= "ef9122e3b4624acbb3a36d657fe7685c"
   const URL=`http://api.positionstack.com/v1/forward?access_key=${KEY}&query=${filterCity}`
   
     axios.get(URL)
