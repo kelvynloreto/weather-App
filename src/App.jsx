@@ -29,7 +29,7 @@ function ChangedCity(){
   
     axios.get(URL)
     .then((res) => setCity(res.data))
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error.toJSON));
 const latlon={
   lat:city?.data[0].latitude,
   lon:city?.data[0].longitude,
