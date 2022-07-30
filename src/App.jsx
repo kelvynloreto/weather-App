@@ -26,16 +26,16 @@ function App() {
   }
 
   function ChangedCity() {
-    const KEY = "7d112c7c96a7acb3fc8b25dabc67f0cd";
-    const URL = `http://api.positionstack.com/v1/forward?access_key=${KEY}&query=${filterCity}`;
+    const KEY = "jlAWHPwwovjwnPVHPFL9nTmy3GZ6DWgW";
+    const URL = `http://www.mapquestapi.com/geocoding/v1/address?key=${KEY}&location=${filterCity}`;
 
     axios
       .get(URL)
       .then((res) => setCity(res.data))
       .catch((error) => console.log(error));
     const latlon = {
-      lat: city?.data[0].latitude,
-      lon: city?.data[0].longitude,
+      lat: city?.results[0].locations[0].latLng.lat,
+      lon: city?.results[0].locations[0].latLng.lng,
     };
     setCoords(latlon);
   }
