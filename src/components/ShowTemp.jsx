@@ -6,7 +6,7 @@ const ShowTemp = ({ temp, degreesKelvin }) => {
       <img src="/src/icons/termometro.png" alt="" />
       {temp
         ? Math.round(degreesKelvin - 273.15) + "ºC"
-        : Math.round(1.8 * (degreesKelvin - 273) + 32) + " ºF"}
+        : Math.round(1.8 * (degreesKelvin - 273.15) + 32) + " ºF"}
     </p>
   );
 };

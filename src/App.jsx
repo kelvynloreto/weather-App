@@ -42,7 +42,8 @@ function App() {
 
   return (
     <div className="App">
-  <Cardsweather lat={coords.lat} lon={coords.lon} setIsLoading={setIsLoading}/>
+
+  <Cardsweather lat={coords.lat} lon={coords.lon} />
       <input type="text" onChange={target} />
       <button onClick={ChangedCity}>busca otra ciudad</button>
 
