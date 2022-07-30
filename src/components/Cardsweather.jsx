@@ -4,7 +4,7 @@ import ChangeDegrees from "./ChangeDegrees";
 import NavIcon from "./NavIcon";
 import ShowTemp from "./ShowTemp";
 
-const Cardswaeter = ({ lat, lon }) => {
+const Cardsweather = ({ lat, lon }) => {
   const [weather, setWeater] = useState({});
   const [temp, setTemp] = useState(true);
   useEffect(() => {
@@ -24,9 +24,8 @@ const Cardswaeter = ({ lat, lon }) => {
   }
 
   return (
-    
     <div className="card_weather">
-     <NavIcon weather={weather} />
+      <NavIcon weather={weather} />
       <img
         src={`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`}
       />
@@ -34,12 +33,11 @@ const Cardswaeter = ({ lat, lon }) => {
         {weather.name} , {weather.sys?.country}
       </p>
       <p> {weather.weather?.[0].description}</p>
-      
+
       <ShowTemp temp={temp} degreesKelvin={degreesKelvin} />
       <ChangeDegrees tempConverter={tempConverter} />
-      
     </div>
   );
 };
 
-export default Cardswaeter;
+export default Cardsweather;
