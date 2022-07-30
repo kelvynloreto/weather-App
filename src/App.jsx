@@ -3,10 +3,13 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Cardsweather from "./components/Cardsweather";
 
+
 function App() {
   const [coords, setCoords] = useState({});
   const [city, setCity] = useState();
   const [filterCity, setFilterCity] = useState();
+
+
 
   useEffect(() => {
     const succes = (pos) => {
@@ -39,9 +42,11 @@ function App() {
 
   return (
     <div className="App">
-      <Cardsweather lat={coords.lat} lon={coords.lon} />
+  <Cardsweather lat={coords.lat} lon={coords.lon} setIsLoading={setIsLoading}/>
       <input type="text" onChange={target} />
       <button onClick={ChangedCity}>busca otra ciudad</button>
+
+
     </div>
   );
 }
