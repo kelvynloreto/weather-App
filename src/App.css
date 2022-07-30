@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   height: 100vh;;
+}
+nav{
+    display: flex;
+    gap: 2em;   
+    padding: 1em;
+}
+nav>p{
+    display: flex;
+    gap: 0.3em;
+    text-align: center;
+}
+
+.card_weather{
+background-color: rgb(190, 196, 238);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 400px;
+gap: 1em;
+}

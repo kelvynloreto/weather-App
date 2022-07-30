@@ -25,7 +25,7 @@ const Cardswaeter = ({ lat, lon }) => {
 
   return (
     
-    <div>
+    <div className="card_weather">
      <NavIcon weather={weather} />
       <img
         src={`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`}
