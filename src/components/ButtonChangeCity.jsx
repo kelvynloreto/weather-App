@@ -25,9 +25,9 @@ export const ButtonChangeCity = ({setCoords}) => {
         setCoords(latlon);
       }
   return (
-    <div>
+    <div className='container_change-city'>
          <input type="text" onChange={target} />
-      <button onClick={ChangedCity}>busca otra ciudad</button>
+      <button onClick={ChangedCity}>Change City</button>
     </div>
   )
 }

@@ -33,7 +33,7 @@ function App() {
         .catch((error) => console.log(error.response));
           setTimeout(() => {
         setIsLoading(false);
-              }, 1000);
+              }, 4000);
     }
   }, [coords]);
 
@@ -74,7 +74,7 @@ else if( weatherIcon == "13d"|| weatherIcon == "13n"){
   return (
     <div className={`App ${bgWeather}`}>
       <Cardsweather weather={weather} />
-      {/* <ButtonChangeCity  setCoords={setCoords}/> */}
+      <ButtonChangeCity  setCoords={setCoords}/>
     </div>
   );
 }
