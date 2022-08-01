@@ -74,8 +74,8 @@ p>img {
 }
 
 .card_weather {
-    background-color: #FF3CAC;
-    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    background-color: #3cffed;
+    background-image: linear-gradient(3deg, #3cffed 0%, #5999cd 50%, #391766 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,7 +117,7 @@ p>img {
     font-size: 25px;
     position: absolute;
     top: 10%;
-    right: -30%;
+    right: -25%;
 }
 
 .showTemp>img {
