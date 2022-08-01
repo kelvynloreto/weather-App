@@ -105,11 +105,12 @@ p>img {
 .showTemp {
     position: relative;
     margin-top: 2em;
-}
+   }
 
 .showTemp>p {
     font-weight: 700;
     font-size: 90px;
+    padding-right: 5px;
 }
 
 .showTemp span {
