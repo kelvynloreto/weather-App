@@ -1,13 +1,18 @@
 import React from "react";
+import termometro from "../icons/termometro.png";
 
 const ShowTemp = ({ temp, degreesKelvin }) => {
+
+  // 
   return (
-    <p>
-      <img src="/src/icons/termometro.png" alt="" />
-      {temp
-        ? Math.round(degreesKelvin - 273.15) + "ºC"
-        : Math.round(1.8 * (degreesKelvin - 273.15) + 32) + " ºF"}
-    </p>
+    <div className="showTemp">
+          {temp
+          ? <p>{Math.round(degreesKelvin - 273.15) } <span>ºC</span></p>
+          : <p>{ Math.round(1.8 * (degreesKelvin - 273.15) + 32)} <span>ºF</span></p>}
+          
+      <img src={termometro} alt="" />
+      
+    </div>
   );
 };
 
