@@ -23,16 +23,8 @@ export const ButtonChangeCity = ({setCoords}) => {
               lon: city?.[0].lon
             }
           setCity(res.data)    
-          setCoords(latlon);     } )
-          .catch((error) => axios.get(error?.config.url).then((res) => {
-            const latlon = {
-              lat: city?.[0].lat,
-              lon: city?.[0].lon
-            }
-          setCity(res.data)    
-          setCoords(latlon)     
-    
-      }))}
+          setCoords(latlon)})
+          .catch((error) => console.log(error))}
 
 
   return (
