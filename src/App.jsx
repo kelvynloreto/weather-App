@@ -7,10 +7,10 @@ import LoadingScreen from "./components/LoadingScreen";
 
 function App() {
   const [coords, setCoords] = useState({});
-  const [weather, setWeater] = useState({});
+  const [weather, setWeater] = useState();
   const [bgWeather, setBgWeather] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const weatherIcon = weather.weather?.[0].icon
+  const weatherIcon = weather?.weather[0].icon
 
   useEffect(() => {
     const succes = (pos) => {
@@ -24,21 +24,6 @@ function App() {
     navigator.geolocation.getCurrentPosition(succes);
   }, []);
   
-   useEffect(() => {
-    if (coords) {
-      const APIKey = "9b22da207481fe7b36a3b31a6f5fd187";
-      const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=${APIKey}`;
-      axios
-        .get(URL)
-        .then((res) => {setWeater(res.data)
-          setIsLoading(false);}
-        )
-        .catch((error) => console.log(error.response));
-          setTimeout(() => {
-        setIsLoading(false);
-              }, 100);
-    }
-  }, [coords]);
 
 useEffect(() => {
   if (weatherIcon == "02n" || weatherIcon == "03n"|| weatherIcon == "04n" ) {
@@ -64,19 +49,17 @@ else if( weatherIcon == "13d"|| weatherIcon == "13n"){
 }
 }, [weather])
 
-
-
-    ;
-  
+console.log(coords);
   return (
     <div className={`App ${bgWeather}`}>
       {isLoading
       ?  
       <div>
-      <LoadingScreen />
+      <LoadingScreen setWeater={setWeater} coords={coords} setIsLoading={setIsLoading}/>
       </div> :
-      <div>  <Cardsweather weather={weather} />
-      <ButtonChangeCity  setCoords={setCoords} /></div>
+      <div> <Cardsweather weather={weather} />
+      {/* <ButtonChangeCity  setCoords={setCoords} /> */}
+      </div>
       }
       
     
