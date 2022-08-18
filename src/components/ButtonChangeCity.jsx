@@ -15,17 +15,17 @@ export const ButtonChangeCity = ({setCoords}) => {
       const sumit= () =>{
         const APIKey = "9b22da207481fe7b36a3b31a6f5fd187";
         const URL = `http://api.openweathermap.org/geo/1.0/direct?q=${filterCity}&limit=5&appid=${APIKey}`;
-                 axios
+             axios
           .get(URL)
-          .then((res) => setCity(res.data)
-          
-          )
+          .then((res) => {
+            const latlon = {
+              lat: city?.[0].lat,
+              lon: city?.[0].lon
+            };setCity(res.data)    
+          setCoords(latlon);     } )
           .catch((error) => console.log(error));
-        const latlon = {
-          lat: city?.[0].lat,
-          lon: city?.[0].lon
-        };
-        setCoords(latlon);
+       
+       
     
       }
 
