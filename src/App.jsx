@@ -14,6 +14,7 @@ function App() {
 
   useEffect(() => {
     const succes = (pos) => {
+      
       const latLon = {
         lat: pos.coords.latitude,
         lon: pos.coords.longitude,
@@ -29,11 +30,13 @@ function App() {
       const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=${APIKey}`;
       axios
         .get(URL)
-        .then((res) => setWeater(res.data))
+        .then((res) => {setWeater(res.data)
+          setIsLoading(false);}
+        )
         .catch((error) => console.log(error.response));
           setTimeout(() => {
         setIsLoading(false);
-              }, 4000);
+              }, 100);
     }
   }, [coords]);
 
@@ -63,21 +66,23 @@ else if( weatherIcon == "13d"|| weatherIcon == "13n"){
 
 
 
-
- if (isLoading) {
-    return (
-      <div>
-        <LoadingScreen />
-      </div>
-    );
-  } else {
+    ;
+  
   return (
     <div className={`App ${bgWeather}`}>
-      <Cardsweather weather={weather} />
-      <ButtonChangeCity  setCoords={setCoords}/>
+      {isLoading
+      ?  
+      <div>
+      <LoadingScreen />
+      </div> :
+      <div>  <Cardsweather weather={weather} />
+      <ButtonChangeCity  setCoords={setCoords} /></div>
+      }
+      
+    
     </div>
   );
 }
-}
+
 
 export default App;
