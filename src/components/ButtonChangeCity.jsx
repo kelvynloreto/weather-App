@@ -21,13 +21,18 @@ export const ButtonChangeCity = ({setCoords}) => {
             const latlon = {
               lat: city?.[0].lat,
               lon: city?.[0].lon
-            };setCity(res.data)    
+            }
+          setCity(res.data)    
           setCoords(latlon);     } )
-          .catch((error) => console.log(error?.config.url));
-       
-       
+          .catch((error) => axios.get(URL)(error?.config.url).then((res) => {
+            const latlon = {
+              lat: city?.[0].lat,
+              lon: city?.[0].lon
+            }
+          setCity(res.data)    
+          setCoords(latlon)     
     
-      }
+      }))}
 
 
   return (
