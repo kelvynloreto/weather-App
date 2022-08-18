@@ -23,7 +23,7 @@ export const ButtonChangeCity = ({setCoords}) => {
               lon: city?.[0].lon
             };setCity(res.data)    
           setCoords(latlon);     } )
-          .catch((error) => console.log(error));
+          .catch((error) => console.log(error?.config.url));
        
        
     
